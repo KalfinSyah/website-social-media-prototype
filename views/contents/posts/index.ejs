@@ -1,0 +1,38 @@
+<div class="container mt-5 mb-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <% posts.forEach(post => { %>
+            <div class="col mb-4">
+                <div class="card shadow-lg rounded-4 border-0">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-dark"><%= post.title %></h5>
+                        <p class="text-muted fst-italic mb-0">
+                            By
+                            <a href="/users/details/<%= post.userId %>" class="text-decoration-none text-success fw-bold">
+                                <%= post.username %>
+                            </a>
+                        </p>
+                    </div>
+                    <div class="card-footer text-center bg-light border-0 rounded-bottom-4">
+                        <a href="/posts/details/<%= post.id %>" class="btn btn-primary rounded-pill px-4 mt-2 mb-2">
+                            See Post Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+
+
+<a href="/posts/mine" class="btn rounded-pill btn-success shadow-lg d-flex align-items-center justify-content-center"
+   style="width: 120px; height: 45px; position: fixed; bottom: 90px; right: 20px; z-index: 1050;">
+    My Post
+</a>
+
+<a href="/posts/add" class="btn btn-primary rounded-pill shadow-lg d-flex align-items-center justify-content-center"
+   style="width: 120px; height: 45px; position: fixed; bottom: 20px; right: 20px; z-index: 1050;">
+    Add Post
+</a>
+
+

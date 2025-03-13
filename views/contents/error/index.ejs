@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+    <div class="card shadow-lg rounded-3 border-0" style="width: 50vw; max-width: 600px;">
+        <div class="card-header bg-danger text-white text-center fw-bold fs-5">
+            ⚠️ Error Occurred
+        </div>
+        <div class="card-body p-4 bg-light">
+            <table class="table table-bordered rounded-3 overflow-hidden">
+                <tbody>
+                <tr class="table-danger">
+                    <th class="text-center w-50">Error Code</th>
+                    <th class="text-center">Error Message</th>
+                </tr>
+                <tr>
+                    <td class="text-center fw-bold text-danger"><%= errorCode %></td>
+                    <td class="text-center text-secondary"><%= errorMessage %></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

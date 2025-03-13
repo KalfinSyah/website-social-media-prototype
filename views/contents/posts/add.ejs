@@ -1,0 +1,31 @@
+<div class="container mt-5">
+    <h2 class="text-center mb-4 mt-5">Add New Post</h2>
+
+    <% const color = valid ? "success" : "danger"; %>
+
+    <% if (message.length > 0) { %>
+        <div class="alert alert-<%= color %> text-center rounded-4 mb-4"><%= message %></div>
+    <% } %>
+
+    <form action="/posts/add" method="POST" class="p-4 border rounded-4 shadow mb-5">
+        <div class="mb-3">
+            <label for="title" class="form-label fw-bold">Title</label>
+            <input type="text" class="form-control" id="title" name="title" placeholder="Enter title" required>
+        </div>
+
+        <div class="mb-3">
+            <label for="body" class="form-label fw-bold">Body</label>
+            <textarea class="form-control" id="body" name="body" rows="4" placeholder="Enter post content" required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label style="display: none;" for="userId" class="form-label fw-bold">User ID</label>
+            <input value="1"  style="display: none;" type="number" class="form-control" id="userId" name="userId" placeholder="Enter User ID" required>
+        </div>
+
+        <div class="d-flex flex-column align-items-center gap-2 mt-4">
+            <button type="submit" class="btn btn-primary px-4 rounded-pill w-100">Submit</button>
+            <a href="/posts" class="btn btn-secondary px-4 rounded-pill w-100">Back</a>
+        </div>
+    </form>
+</div>

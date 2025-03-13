@@ -1,0 +1,48 @@
+<div class="text-center mt-4">
+    <a href="/posts" class="btn btn-secondary rounded-pill px-4 py-2 shadow-sm">
+        ← Back to Posts
+    </a>
+</div>
+
+<% if (successDelete.length > 0) { %>
+    <div class="alert alert-success alert-dismissible fade show text-center me-5 ms-5 mt-5 mb-5" role="alert">
+        <%= successDelete %>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<% } %>
+
+
+<div class="container mt-5 mb-5">
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <% posts.forEach(post => { %>
+            <div class="col mb-4">
+                <div class="card shadow-lg rounded-4 border-0">
+                    <div class="card-body">
+                        <h5 class="fw-bold text-dark"><%= post.title %></h5>
+                    </div>
+                    <div class="card-footer text-center bg-light border-0 rounded-bottom-4">
+                        <a href="/posts/details/<%= post.id %>" class="btn btn-primary rounded-pill px-4 mt-2">
+                            See Post Details
+                        </a>
+                    </div>
+                    <div class="card-footer text-center bg-light border-0 rounded-bottom-4">
+                        <a href="/posts/mine/edit/<%= post.id %>" class="btn btn-success rounded-pill px-4 mb-2">
+                            Edit
+                        </a>
+
+                        <div class="d-flex justify-content-center">
+                            <form action="/posts/mine/delete/<%= post.id %>" method="POST">
+                                <button class="btn btn-danger rounded-pill px-4 mb-2 mt-2">
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+
+
